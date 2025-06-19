@@ -1,0 +1,78 @@
+                                QUESTIONS related TO MongoDB
+                                ----------------------------
+                                       MongoDB Queries
+                                       ---------------
+--------------------------------------------------------------------------------
+1. How do you insert a single document into a MongoDB collection?
+Solution- 
+         insertOne(documents | data)
+
+         for eg, 
+                db.Practice.insertOne({name:"VIDHARBH"})
+
+--------------------------------------------------------------------------------
+
+2. How do you insert multiple documents at once?
+Solution-
+         insertMany(documents | data)
+
+         for eg, 
+                db.Practice.insertMany(
+                    [
+                        {name:"Vidharbh",age:19},
+                        {name:"Yash",age:20}
+                    ]
+                )
+
+--------------------------------------------------------------------------------
+
+3. How do you find all documents in a collection?
+Solution-
+         find(filter,options)
+
+         for eg, 
+                db.Practice.find()
+
+--------------------------------------------------------------------------------
+
+4. How do you find documents where a field equals a specific value?
+Solution-
+         with findOne(filter,options) use $eq(determines the equal value)
+
+         for eg, if we are finding student whose age is 20 then,
+                db.Practice.findOne({age:{$eq:20}})   
+
+--------------------------------------------------------------------------------
+
+5. How do you find documents where a numeric field is greater than a value?
+Solution- 
+        with find(filter,options) use $gt(determines the greater value)
+
+        for eg, find an employee whose salaray is greater than 10K
+               db.employee.find({salary:{$gt:10000}})
+
+--------------------------------------------------------------------------------
+
+6. How do you find documents where a numeric field is less than a value?
+Solution- 
+        with find(filter,options) use $lt(determines the lesser value)
+
+        for eg, find an employee whose salaray is less than 10K
+               db.employee.find({salary:{$lt:10000}})
+
+--------------------------------------------------------------------------------
+
+7. How do you find documents with multiple conditions (AND)?
+Solution- 
+         $and --> it is used to join query clauses with a logical AND and return all 
+         documents that match the given condition of both clauses.
+
+         for eg, 
+                db.employee.find({$and: [{job:"manager"},{deptno: 17}]})
+
+--------------------------------------------------------------------------------------------
+NOTE- Here in the examples given the "Practice" , "employee" is the name of the collections
+
+NAME- VIDHARBH KUMAR TYAGI
+REG NO- 23BCE8478
+--------------------------------------------------------------------------------------------
